@@ -1,0 +1,14 @@
+name: StarRealms
+main: io.github.Jayfeather1.StarRealms
+version: 1.0
+softdepend: [BarAPI]
+commands:
+    hub:
+        description: Teleport to the StarRealms Hub
+        usage: /<command>
+    kits:
+        description: KitPvP Kits Command
+        usage: /<command> [Kit]
+    rank:
+        description: Staff rank management
+        usage: /<command>

@@ -1,3 +1,4 @@
+
 package io.github.Jayfeather1;
 
 import java.io.File;
@@ -64,21 +65,21 @@ public class StarRealms extends JavaPlugin implements Listener{
 		}else{
 			getLogger().info("Found config.yml");
 		}
-	getLogger().info("+--------------------------+");
-	getLogger().info("|                          |");
-	getLogger().info("| StarRealms Custom Plugin |");
-	getLogger().info("|      by: Freelix2000     |");
-	getLogger().info("|                          |");
-	getLogger().info("+--------------------------+");
-	BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-	HUD.HUDSetup();
-    scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
-		@Override
-		public void run() {
-			HUD.meow();
-		}
-    }, 0L, 20 * 15L);
-    b.enable();
+		getLogger().info("+--------------------------+");
+		getLogger().info("|                          |");
+		getLogger().info("| StarRealms Custom Plugin |");
+		getLogger().info("|      by: Freelix2000     |");
+		getLogger().info("|                          |");
+		getLogger().info("+--------------------------+");
+		BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+		HUD.HUDSetup();
+    		scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
+			@Override
+			public void run() {
+				HUD.meow();
+			}
+    		}, 0L, 20 * 15L);
+	 	b.enable();
 	}
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
@@ -101,11 +102,11 @@ public class StarRealms extends JavaPlugin implements Listener{
 				p.sendMessage(ChatColor.RED + "/rank <player> <group>");
 				return true;
 			}
-			Bukkit.dispatchCommand(p, "/manuadd " + args[0] + " " + args[1] + " kitpvp");
-			Bukkit.dispatchCommand(p, "/manuadd " + args[0] + " " + args[1] + " freebuild");
-			Bukkit.dispatchCommand(p, "/manuadd " + args[0] + " " + args[1] + " Survival");
-			Bukkit.dispatchCommand(p, "/manuadd " + args[0] + " " + args[1] + " skyworld");
-			Bukkit.dispatchCommand(p, "/manuadd " + args[0] + " " + args[1] + " world");
+			Bukkit.dispatchCommand(p, "manuadd " + args[0] + " " + args[1] + " kitpvp");
+			Bukkit.dispatchCommand(p, "manuadd " + args[0] + " " + args[1] + " freebuild");
+			Bukkit.dispatchCommand(p, "manuadd " + args[0] + " " + args[1] + " Survival");
+			Bukkit.dispatchCommand(p, "manuadd " + args[0] + " " + args[1] + " skyworld");
+			Bukkit.dispatchCommand(p, "manuadd " + args[0] + " " + args[1] + " world");
 			p.sendMessage(ChatColor.GOLD + "Promoted " + ChatColor.YELLOW + args[0] + ChatColor.GOLD + " to " + ChatColor.YELLOW + args[1] + ChatColor.GOLD + " in all worlds.");
 			return true;
 		}
@@ -129,15 +130,15 @@ public class StarRealms extends JavaPlugin implements Listener{
 			}
 			Integer random = getRandom(1, 3);
 			if(random.equals(1)){
-				e.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.AQUA + "Owner" + ChatColor.DARK_GRAY + "][" + ChatColor.AQUA + "Dev" + ChatColor.DARK_GRAY + "]" + p.getDisplayName() + ChatColor.GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&b" + e.getMessage()));
+				e.setFormat(ChatColor.GRAY + "[" + ChatColor.AQUA + "Owner" + ChatColor.GRAY + "][" + ChatColor.AQUA + "Dev" + ChatColor.GRAY + "]" + p.getDisplayName() + ChatColor.DARK_GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&b" + e.getMessage()));
 				return;
 			}
 			if(random.equals(2)){
-				e.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW + "Owner" + ChatColor.DARK_GRAY + "][" + ChatColor.YELLOW + "Dev" + ChatColor.DARK_GRAY + "]" + p.getDisplayName() + ChatColor.GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&e" + e.getMessage()));
+				e.setFormat(ChatColor.GRAY + "[" + ChatColor.YELLOW + "Owner" + ChatColor.GRAY + "][" + ChatColor.YELLOW + "Dev" + ChatColor.GRAY + "]" + p.getDisplayName() + ChatColor.DARK_GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&e" + e.getMessage()));
 				return;
 			}
 			if(random.equals(3)){
-				e.setFormat(ChatColor.DARK_GRAY + "[" + ChatColor.GREEN + "Owner" + ChatColor.DARK_GRAY + "][" + ChatColor.GREEN + "Dev" + ChatColor.DARK_GRAY + "]" + p.getDisplayName() + ChatColor.GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&a" + e.getMessage()));
+				e.setFormat(ChatColor.GRAY + "[" + ChatColor.GREEN + "Owner" + ChatColor.GRAY + "][" + ChatColor.GREEN + "Dev" + ChatColor.GRAY + "]" + p.getDisplayName() + ChatColor.DARK_GRAY + ": " + ChatColor.translateAlternateColorCodes('&', "&a" + e.getMessage()));
 				return;
 			}
 		}
